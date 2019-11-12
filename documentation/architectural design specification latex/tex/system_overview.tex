@@ -2,15 +2,15 @@ The overall structure of our system, includes three systems. Those systems are t
 
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/High\ Level\ Systems\ Overview}
+ 	\includegraphics[width=0.60\textwidth]{images/High_Level}
  \caption{A simple architectural layer diagram}
 \end{figure}
 
-\subsection{Layer X Description}
-Each layer should be described separately in detail. Descriptions should include the features, functions, critical interfaces and interactions of the layer. The description should clearly define the services that the layer provides. Also include any conventions that your team will use in describing the structure: naming conventions for layers, subsystems, modules, and data flows; interface specifications; how layers and subsystems are defined; etc. 
+\subsection{Application Layer Description}
+The application layer will take user inputs and send that input to the hub or the shutters directly depending on the connection type. The application layer is also able to request data from the shutters as well such as the current position and battery level 
 
-\subsection{Layer Y Description}
-Each layer should be described separately in detail. Descriptions should include the features, functions, critical interfaces and interactions of the layer. The description should clearly define the services that the layer provides. Also include any conventions that your team will use in describing the structure: naming conventions for layers, subsystems, modules, and data flows; interface specifications; how layers and subsystems are defined; etc. 
+\subsection{Hub Layer Description}
+The Hub will take input from both the app and shutters and reciprocate the information to the intended destination. The commands sent by the app will tell the hub which shutter to interact with and the intended position of the shutter. The hub will also be receive information about each shutters current position and battery level and relay this information to the application
 
-\subsection{Layer Z Description}
-Each layer should be described separately in detail. Descriptions should include the features, functions, critical interfaces and interactions of the layer. The description should clearly define the services that the layer provides. Also include any conventions that your team will use in describing the structure: naming conventions for layers, subsystems, modules, and data flows; interface specifications; how layers and subsystems are defined; etc. 
+\subsection{Shutter Layer Description}
+This layer will process input about changes to the shutters position and then update the shutters to that intended position. This layer would also send out information about the shutters current position and battery level to the application
