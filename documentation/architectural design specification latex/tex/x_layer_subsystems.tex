@@ -10,29 +10,80 @@ Mobile devices use the mobile application to send request to the hub.
 \end{figure}
 
 \subsubsection{Assumptions}
-Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
+Users have an android or ios phone and users have not tampered with the application. 
 
 \subsubsection{Responsibilities}
-Each of the responsibilities/features/functions/services of the subsystem as identified in the architectural summary must be expanded to more detailed responsibilities. These responsibilities form the basis for the identification of the finer-grained responsibilities of the layer's internal subsystems. Clearly describe what each subsystem does.
+Properly taking commands from the user and displaying all the option for the user as well as displaying the status of each shutter that is connected to the hub.
 
 \subsubsection{Subsystem Interfaces}
-Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
 
 \begin {table}[H]
 \caption {Subsystem interfaces} 
 \begin{center}
-    \begin{tabular}{ | p{1cm} | p{6cm} | p{3cm} | p{3cm} |}
+    \begin{tabular}{ | p{1cm} | p{7cm} | p{4cm} | p{5cm} |}
     \hline
     ID & Description & Inputs & Outputs \\ \hline
-    \#xx & Description of the interface/bus & \pbox{3cm}{input 1 \\ input 2} & \pbox{3cm}{output 1}  \\ \hline
-    \#xx & Description of the interface/bus & \pbox{3cm}{N/A} & \pbox{3cm}{output 1}  \\ \hline
+    1 &Allows users to choose between a scheduled or immediate task& Mobile device communication & scheduling and communication \\ \hline
     \end{tabular}
 \end{center}
 \end{table}
 
-\subsection{Subsystem 2}
-Repeat for each subsystem
+\subsection{Scheduling}
+\subsubsection{Assumptions}
+Users have an android or ios phone and users have not tampered with the application. 
 
-\subsection{Subsystem 3}
-Repeat for each subsystem
+\subsubsection{Responsibilities}
+Properly executing tasks at the requested time.
 
+\subsubsection{Subsystem Interfaces}
+
+\begin {table}[H]
+\caption {Subsystem interfaces} 
+\begin{center}
+    \begin{tabular}{ | p{1cm} | p{7cm} | p{4cm} | p{3cm} |}
+    \hline
+    ID & Description & Inputs & Outputs \\ \hline
+    1 &Package all request and send to the hub&Scheduling &Hub\\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Communication}
+\subsubsection{Assumptions}
+Users have an android or ios phone and users have not tampered with the application. 
+
+\subsubsection{Responsibilities}
+Properly executing tasks at the requested time.
+
+\subsubsection{Subsystem Interfaces}
+
+\begin {table}[H]
+\caption {Subsystem interfaces} 
+\begin{center}
+    \begin{tabular}{ | p{1cm} | p{7cm} | p{4cm} | p{3cm} |}
+    \hline
+    ID & Description & Inputs & Outputs \\ \hline
+    1 &Package all request and send to the hub& Communications &Hub\\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Hub}
+\subsubsection{Assumptions}
+Users have an android or ios phone and users have not tampered with the application. 
+
+\subsubsection{Responsibilities}
+Properly executing tasks at the requested time.
+
+\subsubsection{Subsystem Interfaces}
+
+\begin {table}[H]
+\caption {Subsystem interfaces} 
+\begin{center}
+    \begin{tabular}{ | p{1cm} | p{7cm} | p{5cm} | p{4cm} |}
+    \hline
+    ID & Description & Inputs & Outputs \\ \hline
+    1 &Send all request to the Hub or the Shutters directly &Communications or Scheduling &WiFi or Bluetooth communication\\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
