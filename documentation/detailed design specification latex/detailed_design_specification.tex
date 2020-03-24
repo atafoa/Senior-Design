@@ -26,15 +26,16 @@
 \allsectionsfont{\color{accentcolor}\scshape\selectfont}
 
 %%% Definitions
+%%% Definitions
 \definecolor{accentcolor}{rgb}{0.0,0.0,0.5} 
-\newcommand{\teamname}{Team Name}
-\newcommand{\productname}{Product Name}
-\newcommand{\coursename}{CSE 4317: Senior Design II}
-\newcommand{\semester}{Spring 2016}
+\newcommand{\teamname}{No SHUT Eye}
+\newcommand{\productname}{Smart Shutters}
+\newcommand{\coursename}{CSE 4316: Senior Design II}
+\newcommand{\semester}{Spring 2020}
 \newcommand{\docname}{Detailed Design Specification}
 \newcommand{\department}{Department of Computer Science \& Engineering}
 \newcommand{\university}{The University of Texas at Arlington}
-\newcommand{\authors}{Alan Turing \\ Grace Hopper \\ John Von Neumann \\ Ada Lovelace \\ Charles Babbage}
+\newcommand{\authors}{Atafo Abure \\ David Nquyen \\ Deion Nwaefulu \\ Aditya Rajguru \\ Haris Qureshi}
 
 %%% Headers and footers
 \usepackage{fancyhdr}
@@ -67,12 +68,6 @@
 {\centering \huge \color{accentcolor} \sc \textbf{\department \\ \university} \par}
 \vspace{1 in}
 {\centering \huge \color{accentcolor} \sc \textbf{\docname \\ \coursename \\ \semester} \par}
-\vspace{0.5 in}
-\begin{figure}[h!]
-	\centering
-   	\includegraphics[width=0.60\textwidth]{images/test_image}
-\end{figure}
-\vspace{0.5 in}
 {\centering \huge \color{accentcolor} \sc \textbf{\teamname \\ \productname} \par}
 \vspace{0.5 in}
 {\centering \large \sc \textbf{\authors} \par}
@@ -85,11 +80,9 @@
 
 %%% Revision History
 \begin{versionhistory}
-  	\vhEntry{0.1}{1.01.2016}{GH}{document creation}
-  	\vhEntry{0.2}{1.05.2016}{AT|GH}{complete draft}
-  	\vhEntry{0.3}{1.12.2016}{AT|GH}{release candidate 1}
-  	\vhEntry{1.0}{1.20.2016}{AT|GH|CB}{official release}
-  	\vhEntry{1.1}{1.31.2016}{AL}{added design review requests}
+  	\vhEntry{0.1}{09.26.2019}{HQ|AA|DN|DN|AR}{document creation}
+  	\vhEntry{0.2}{09.30.2019}{AA|HQ|DN|DN|AR}{complete draft}
+  	\vhEntry{1.0}{10.01.2018}{AA|HQ|DN|DN|AR}{official release}
 \end{versionhistory}
 \newpage
 
@@ -112,13 +105,13 @@
 %\section{Subsystem Definitions \& Data Flow}
 %\input{tex/data_flow.tex}
 \newpage
-\section{X Layer Subsystems}
+\section{Mobile Layer Subsystems}
 \input{tex/x_layer_subsystems.tex}
 \newpage
-\section{Y Layer Subsystems}
+\section{Hub Layer Subsystems}
 \input{tex/y_layer_subsystems.tex}
 \newpage
-\section{Z Layer Subsystems}
+\section{Shutter Layer Subsystems}
 \input{tex/z_layer_subsystems.tex}
 \newpage
 \section{Appendix A}

@@ -1,39 +1,63 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
-
 \subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+
+Software running on a Raspberry pi 0w with Raspbian Buster / 2020-02-05
+The raspberry pi 0w is small, made in large scale, and is only \$10
 
 \subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+Raspbian Buster / 2020-02-05 current version of raspbian available
 
 \subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+Django 3.0 web framework
+Cronjobs  
 
-\subsection{Subsystem 1}
-Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
+\subsection{Bluetooth communication}
+Communicate request to the shutters over bluetooth using python the bluetool library
 
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
+ 	\includegraphics[width=0.60\textwidth]{images/hub}
+ \caption{Hub subsystem}
 \end{figure}
 
 \subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
+Raspberry pi 0W and ESP32
 
 \subsubsection{Subsystem Operating System}
-A description of any operating systems required by the subsystem.
+Raspbian Buster / 2020-02-05 the current version of raspbian available
 
 \subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+Python Bluetool library
 
 \subsubsection{Subsystem Programming Languages}
-A description of any programming languages used by the subsystem.
+Using Python 2.7 to communicate to the shutter
 
 \subsubsection{Subsystem Data Structures}
-A description of any classes or other data structures that are worth discussing for the subsystem. For example, data being transmitted from a microcontroller to a PC via USB should be first be assembled into packets. What is the structure of the packets?
+The hub will receive HTTP user requests and send the commands to the shutters via Bluetooth, then receive acknowledgments from the shutter and send the acknowledgment to the user. 
 
 \subsubsection{Subsystem Data Processing}
-A description of any algorithms or processing strategies that are worth discussing for the subsystem. If you are implementing a well-known algorithm, list it. If it is something unique to this project, discuss it in greater detail.
+Send commands to shutter through Bluetooth using the bluetool python library
 
+\subsection{Wi-Fi communication}
+Receiving HTTP request and sending JSON back to the application
+
+\subsubsection{Subsystem Hardware}
+Using a Raspberry Pi 0W
+
+\subsubsection{Subsystem Operating System}
+Raspbian Buster / 2020-02-05 the current version of raspbian available
+
+\subsubsection{Subsystem Software Dependencies}
+Django 3.0 Web framework
+Bluetool
+
+
+\subsubsection{Subsystem Programming Languages}
+System will be built on the current version of Python 3 and Python 2.7
+
+\subsubsection{Subsystem Data Structures}
+Using a dictionary to contain the mac address as the key and the name as the value of the shutter
+Sending data and receiving request from mobile users through HTTP request
+
+\subsubsection{Subsystem Data Processing}
+Sending information to mobile applications in JSON format as a HTTP response to application api calls.
 

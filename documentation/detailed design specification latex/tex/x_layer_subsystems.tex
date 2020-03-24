@@ -1,39 +1,62 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
-
 \subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+A mobile phone
 
 \subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+User’s will need to have Android 10.0 and iOS 13
+
 
 \subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+React Native framework
 
-\subsection{Subsystem 1}
-Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
+\subsection{Scheduling}
+When users want to set a schedule this sub-system will handle the task. The system will send a HTTP post request to the hub which set the schedule, handle the task, and notify users when the task is completed
 
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
+ 	\includegraphics[width=0.60\textwidth]{images/mobile}
+ \caption{Mobile subsystem layer}
 \end{figure}
 
 \subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
+Users should have either devices Android or iOS.
 
 \subsubsection{Subsystem Operating System}
-A description of any operating systems required by the subsystem.
+Android 10.0 or iOS 13 or later
 
 \subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+Users be connected to the shutter with Bluetooth or the hub via Wi-Fi and users have not tampered with the Application 
 
 \subsubsection{Subsystem Programming Languages}
-A description of any programming languages used by the subsystem.
+Node JS
+
 
 \subsubsection{Subsystem Data Structures}
-A description of any classes or other data structures that are worth discussing for the subsystem. For example, data being transmitted from a microcontroller to a PC via USB should be first be assembled into packets. What is the structure of the packets?
+Data received by the hub will be in JSON format and request will be HTTP request. Name of the shutter along with the mac address will be stored in a dictionary with the name being the value and the mac address being the key.
+
 
 \subsubsection{Subsystem Data Processing}
-A description of any algorithms or processing strategies that are worth discussing for the subsystem. If you are implementing a well-known algorithm, list it. If it is something unique to this project, discuss it in greater detail.
+JSON formatting for from the http get request
+
+\subsection{Communication layer}
+
+\subsubsection{Subsystem Hardware}
+Users have devices that are running Android 10.0 or iOS 13 or later
+
+\subsubsection{Subsystem Operating System}
+Android 10.0 or iOS 13 or later
+
+\subsubsection{Subsystem Software Dependencies}
+React native framework
+The application must be able to send HTTP get or post request to the hub, also be able to communicate to the shutter through Bluetooth 
+
+\subsubsection{Subsystem Programming Languages}
+Node JS
+
+\subsubsection{Subsystem Data Structures}
+The application must send an HTTP request to the hub if users are connecting through WiFi 
+If users are connected directly to the shutter they must send request through Bluetooth and receive acknowledgement packets
+
+\subsubsection{Subsystem Data Processing}
+Using simple HTTP request and bluetooth libraries to communicate 
 
 
